@@ -1,0 +1,29 @@
+ion-content{
+    --background:#E5D380;
+}
+.spin{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ion-spinner {
+    width: 28px;
+    height: 28px;
+    stroke: rgb(20, 170, 35);
+    fill: rgb(186, 30, 155);
+  }
+
+.bounce-in-top{animation:bounce-in-top 2s both;
+    margin-top:40%;
+}
+
+
+.tracking-in-expand-fwd{animation:tracking-in-expand-fwd 2s cubic-bezier(.215,.61,.355,1.000) both}
+.tracking-in-contract-bck{animation:tracking-in-contract-bck 2s cubic-bezier(.215,.61,.355,1.000) both;
+    margin-top:10%;}
+
+@keyframes tracking-in-expand-fwd-top{0%{letter-spacing:-.5em;transform:translateZ(-700px) translateY(-500px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0) translateY(0);opacity:1}}
+@keyframes tracking-in-contract-bck{0%{letter-spacing:1em;transform:translateZ(400px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0);opacity:1}}
+@keyframes tracking-in-expand-fwd{0%{letter-spacing:-.5em;transform:translateZ(-700px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0);opacity:1}}
+@keyframes bounce-in-top{0%{transform:translateY(-500px);animation-timing-function:ease-in;opacity:0}38%{transform:translateY(0);animation-timing-function:ease-out;opacity:1}55%{transform:translateY(-65px);animation-timing-function:ease-in}72%{transform:translateY(0);animation-timing-function:ease-out}81%{transform:translateY(-28px);animation-timing-function:ease-in}90%{transform:translateY(0);animation-timing-function:ease-out}95%{transform:translateY(-8px);animation-timing-function:ease-in}100%{transform:translateY(0);animation-timing-function:ease-out}}
