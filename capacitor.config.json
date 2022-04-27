@@ -1,6 +1,6 @@
 {
 	"appId": "relevamiento.app",
-	"appName": "Relevamiento_Visual",
+	"appName": "Relevamiento Visual",
 	"webDir": "www",
 	"bundledWebRuntime": false,
 	"backgroundColor": "#E5D380",
