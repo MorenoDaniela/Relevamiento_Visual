@@ -1,12 +1,15 @@
-<ion-content  style="background-color:#E5D380;">
-  <app-menu>
+<app-menu>
 
-  </app-menu>
-  <div class="text-center" style="background-color:#E5D380;">
-    <ion-label>Fotos lindas</ion-label>
+</app-menu>
+<ion-content >
+  <div class="spin" *ngIf="spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+</div>
+  <div class="text-center" style="background-color:#E5D380;" *ngIf="!spinner">
+    <img src="../../../assets/fotoslindas.png">
   </div>
  
-  <ion-card style="background-color:#E5D380;" *ngFor="let photo of misFotosLindas; index as position">
+  <ion-card style="background-color:#E5D380; border-color: black; border-radius: 3px;" *ngFor="let photo of misFotosLindas; index as position">
     <ion-card-header>
       <ion-card-subtitle>{{photo.usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
@@ -20,8 +23,8 @@
       <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
     </ion-button>
   </ion-card>
-  <div class="text-center" style="background-color:#E5D380;">
-    <ion-label>Fotos feas</ion-label>
+  <div class="text-center" style="background-color:#E5D380;" *ngIf="!spinner">
+    <img src="../../../assets/fotosfeas.png">
   </div>
 
   <ion-card style="background-color:#E5D380;" *ngFor="let photo of misFotosFeas; index as position">

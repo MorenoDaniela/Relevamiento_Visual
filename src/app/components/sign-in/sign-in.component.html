@@ -1,36 +1,6 @@
-<!-- 
-  
-  <div class="wrapper">
-    <div class="logo"> <img style="background-color: #E5D380;"src="../../../assets/icon.png" alt=""> </div>
-    <div class="text-center mt-4 name"> Moreno App </div>
-    <form class="p-3 mt-3" [formGroup]="formulario" (ngSubmit)="Loguear()">
-        <div class="form-field d-flex align-items-center"> 
-          <span class="far fa-user"></span>  
-           <input type="text" class="formControl" placeholder="Email" formControlName="Email" required>
-           
-          </div>
-          <span class="text-danger" *ngIf="formulario.get('Email')?.hasError('required') && formulario.get('Email')?.touched">El Email es requerido.</span> 
-                                    <span class="text-danger" *ngIf="formulario.get('Email')?.hasError('pattern') && formulario.get('Email')?.touched">El Email debe tener x.</span>
-        <div class="form-field d-flex align-items-center"> 
-          <span class="fas fa-key"></span> 
-          <input type="password" class="formControl" placeholder="Password" formControlName="Password" required>
-         
-         </div>
-         <span class="text-danger" *ngIf="formulario.get('Password')?.hasError('required') && formulario.get('Password')?.touched">La contraseña es requerida.</span>  
-       
-        <ion-button size="small" color="primary" type="submit" shape="round" expand="block" [disabled]="formulario.invalid">Logueate</ion-button>
-    </form>
-    
-    <ion-button size="small" color="success" shape="round" expand="block" (click)="Sereneis()">Usuario 1</ion-button>
-    <ion-button size="small" color="danger" shape="round"  expand="block" (click)="Irina()">Usuario 2</ion-button>
-    <ion-button size="small" color="warning"shape="round" expand="block" (click)="Denu()">Usuario 3</ion-button>
-   
-</div> -->
-<DIV  style="background-color: #E5D380;">
+<ion-content>
   <ion-card  style="background-color: #E5D380;">
-    <!-- <ion-card-header>
-      <ion-card-title class="text-center" style="color: grey;">Relevamiento Visual</ion-card-title>
-    </ion-card-header> -->
+   
     <img style="background-color: #E5D380;"src="../../../assets/tituloRelevamiento.png" alt="">
     <br>
     <ion-item color="#E5D380" (click)="Sereneis()">
@@ -47,21 +17,27 @@
     </ion-item>
     <div class="logo"> <img style="background-color: #E5D380;"src="../../../assets/icon.png" alt=""> </div>
     <form [formGroup]="formulario" (ngSubmit)="Loguear()">
-      <div class="d-flex align-items-center"> 
+      <ion-item>
         <ion-icon name="person-circle-outline" slot="start"></ion-icon>
-         <input type="text" class="formControl" placeholder="Email" formControlName="Email" required>
-         
-        </div>
+         <ion-input type="text" class="formControl" placeholder="Correo electrónico" formControlName="Email" required>
+         </ion-input>
+      </ion-item>
+
         <span class="text-danger" *ngIf="formulario.get('Email')?.hasError('required') && formulario.get('Email')?.touched">El Email es requerido.</span> 
         <span class="text-danger" *ngIf="formulario.get('Email')?.hasError('pattern') && formulario.get('Email')?.touched">El Email debe tener x.</span>
-      <div class="d-flex align-items-center"> 
-        <ion-icon name="key-outline"></ion-icon>
-        <input type="password" class="formControl" placeholder="Contraseña" formControlName="Password" required>
-       
-       </div>
+      <ion-item>
+        <ion-icon name="key-outline" slot="start"></ion-icon>
+        
+        <ion-input type="password" class="formControl" placeholder="Contraseña" formControlName="Password" required></ion-input>
+      </ion-item>
        <span class="text-danger" *ngIf="formulario.get('Password')?.hasError('required') && formulario.get('Password')?.touched">La contraseña es requerida.</span>  
      <br>
       <ion-button size="small" color="warning" type="submit" shape="round" expand="block" [disabled]="formulario.invalid">Ingresar</ion-button>
   </form>
+
+
   </ion-card>
-</DIV>
+  <div class="spin" *ngIf="spinner">
+    <ion-spinner name="crescent"></ion-spinner>
+</div>
+</ion-content>

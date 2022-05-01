@@ -1,17 +1,23 @@
 <!-- <ion-button color="danger" (click)="authService.SignOut()" class="text-right">
   Salir
  </ion-button> -->
-<app-menu>
+<ion-content>
+  <app-menu>
 
-</app-menu>
- <div  style="background-color: palevioletred;width: 100%;height: 50%;" (click)="cosasLindas()">
-  <div class="text-center">
-    <ion-icon  size="large" name="heart-outline" color="danger"></ion-icon>
-   </div>
-</div>
-
-  <div style="background-color: skyblue; width: 100%;height: 50%;" (click)="cosasFeas()">
+  </app-menu>
+   <div  style="background-color: palevioletred;width: 100%;height: 50%;" (click)="addPhotoToGallery1()">
     <div class="text-center">
-      <ion-icon  size="large" name="heart-dislike-outline"></ion-icon>
-    </div>
-</div>
+      <!-- <ion-icon  size="large" name="heart-outline" color="danger"></ion-icon> -->
+      <img src="../../../assets/like.png">
+      <h5>Fotos lindas</h5>
+     </div>
+  </div>
+  
+    <div style="background-color: skyblue; width: 100%;height: 50%;" (click)="addPhotoToGallery()">
+      <div class="text-center">
+        <!-- <ion-icon  size="large" name="heart-dislike-outline"></ion-icon> -->
+        <img src="../../../assets/broken.png">
+        <h5>Fotos feas</h5>
+      </div>
+  </div>
+</ion-content>

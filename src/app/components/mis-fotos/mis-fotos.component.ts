@@ -11,7 +11,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./mis-fotos.component.scss'],
 })
 export class MisFotosComponent implements OnInit {
-
+  spinner:boolean=false;
   public fotosLindas;
   public fotosFeas;
   public misFotosLindas:any=new Array<any>();
@@ -19,11 +19,12 @@ export class MisFotosComponent implements OnInit {
 
   constructor(public photoService: PhotoService, public authService: AuthService, public firestore:AngularFirestore) 
   { 
-    console.log("en mis fotos "+this.authService.userData.email);
+    this.spinner=true;
     this.fotosLindas = this.firestore.collection("fotosLindas", ref => ref.where('usuarioEmail', '==', this.authService.userData.email)).snapshotChanges();
     this.fotosFeas = this.firestore.collection("fotosFeas", ref => ref.where('usuarioEmail', '==', this.authService.userData.email)).snapshotChanges();
     this.cargarFotosLindas();
     this.cargarFotosFeas();
+   
   }
 
   ngOnInit() {}
@@ -46,6 +47,7 @@ cargarFotosLindas(){
       })
     })
   ).subscribe((datos: any) => {
+    
   });
 }
 
@@ -68,6 +70,7 @@ cargarFotosFeas(){
       })
     })
   ).subscribe((datos: any) => {
+    this.spinner=false;
   });
 }
 }

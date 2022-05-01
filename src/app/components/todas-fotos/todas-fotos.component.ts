@@ -10,10 +10,11 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./todas-fotos.component.scss'],
 })
 export class TodasFotosComponent implements OnInit {
+  spinner:boolean=false;
   public misFotosLindas:any=new Array<any>();
   public misFotosFeas:any=new Array<any>();
   constructor(public photoService: PhotoService, public authService: AuthService) {
-    console.log("en todas fotos "+this.authService.userData.email);
+    this.spinner=true;
     this.cargarFotosLindas();
     this.cargarFotosFeas();
    }
@@ -60,6 +61,7 @@ export class TodasFotosComponent implements OnInit {
         })
       })
     ).subscribe((datos: any) => {
+      this.spinner=false;
     });
   }
 

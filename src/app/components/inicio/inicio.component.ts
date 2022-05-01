@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { PhotoService } from 'src/app/shared/services/photo.service';
 
 @Component({
   selector: 'app-inicio',
@@ -9,16 +10,16 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(public router: Router, public authService: AuthService) { }
+  constructor(public router: Router, public authService: AuthService, public photoService:PhotoService) { }
 
   ngOnInit() {}
 
-  cosasLindas(){
-    this.router.navigate(['sacarFotoLinda']);
+  addPhotoToGallery1() {
+    this.photoService.addNewToGallery('fotosLindas');
+    
   }
 
-  cosasFeas(){
-    this.router.navigate(['sacarFotoFea']);
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery('fotosFeas');
   }
-
 }
