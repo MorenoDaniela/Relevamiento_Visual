@@ -11,15 +11,15 @@
  
   <ion-card style="background-color:#E5D380; border-color: black; border-radius: 3px;" *ngFor="let photo of misFotosLindas; index as position">
     <ion-card-header>
-      <ion-card-subtitle>{{photo.usuarioEmail}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
     <ion-img [src]="photo.imagen"></ion-img>
     <ion-card-header>
-      <ion-card-subtitle>{{photo.fecha}}</ion-card-subtitle>
-      <ion-card-subtitle> Votos: {{photo.votos}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.fecha}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-button color="danger" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
+    <ion-button color="danger" shape="round" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
       <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
     </ion-button>
   </ion-card>
@@ -29,15 +29,15 @@
 
   <ion-card style="background-color:#E5D380;" *ngFor="let photo of misFotosFeas; index as position">
     <ion-card-header>
-      <ion-card-subtitle>{{photo.usuarioEmail}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
     <ion-img [src]="photo.imagen"></ion-img>
     <ion-card-header>
-      <ion-card-subtitle>{{photo.fecha}}</ion-card-subtitle>
-      <ion-card-subtitle> Votos: {{photo.votos}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.fecha}}</ion-card-subtitle>
+      <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-button color="primary" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
+    <ion-button color="primary" shape="round" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
       <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
     </ion-button>
   </ion-card>

@@ -1,25 +1,25 @@
 <ion-accordion-group style="background-color:#E5D380;">
   <ion-accordion value="menu">
     <ion-item slot="header">
-      <ion-label>Menu</ion-label>
+      <ion-label  class="text-center">Menu</ion-label>
     </ion-item>
 
     <ion-list slot="content">
      
       <ion-item (click)="cosasLindas()">
-        <ion-label>Sacar foto linda</ion-label>
+        <ion-label class="text-center" >Sacar foto linda</ion-label>
       </ion-item>
       <ion-item (click)="cosasFeas()">
-        <ion-label>Sacar foto fea</ion-label>
+        <ion-label  class="text-center">Sacar foto fea</ion-label>
       </ion-item>
       <ion-item (click)="misFotos()">
-        <ion-label>Mis fotos</ion-label>
+        <ion-label  class="text-center">Mis fotos</ion-label>
       </ion-item>
       <ion-item (click)="listado()">
-        <ion-label>Todas las fotos</ion-label>
+        <ion-label  class="text-center">Todas las fotos</ion-label>
       </ion-item>
       <ion-item color="danger" (click)="authService.SignOut()" >
-        <ion-label>Salir</ion-label>
+        <ion-label  class="text-center">Salir</ion-label>
       </ion-item>
     </ion-list>
   </ion-accordion>

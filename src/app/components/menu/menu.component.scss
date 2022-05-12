@@ -1,3 +1,12 @@
 ion-content{
     --background:#E5D380;
 }
+
+ion-accordion-group{
+    ion-accordion {
+        .ion-item {
+            font-size: 50px;
+            background-color: red;
+        }
+    }
+}

@@ -3,18 +3,29 @@
    
     <img style="background-color: #E5D380;"src="../../../assets/tituloRelevamiento.png" alt="">
     <br>
-    <ion-item color="#E5D380" (click)="Sereneis()">
+    <ion-button color="dark" shape="round" expand="block" (click)="Sereneis()">
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>Usuario 1</ion-label>
-    </ion-item>
-    <ion-item color="#A18F63" (click)="Irina()">
+    </ion-button>
+    <ion-button color="dark" shape="round"expand="block" (click)="Irina()">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label>Usuario 2</ion-label>
+    </ion-button>
+    <ion-button color="dark" shape="round" expand="block" (click)="Denu()">
+      <ion-icon name="person" slot="start"></ion-icon>
+      <ion-label>Usuario 3</ion-label>
+    </ion-button>
+    <!-- <ion-item color="#E5D380" (click)="Sereneis()">
+     
+    </ion-item> -->
+    <!-- <ion-item color="#A18F63" (click)="Irina()">
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>Usuario 2</ion-label>
     </ion-item>
     <ion-item color="#a9acad" (click)="Denu()">
       <ion-icon name="person" slot="start"></ion-icon>
       <ion-label>Usuario 3</ion-label>
-    </ion-item>
+    </ion-item> -->
     <div class="logo"> <img style="background-color: #E5D380;"src="../../../assets/icon.png" alt=""> </div>
     <form [formGroup]="formulario" (ngSubmit)="Loguear()">
       <ion-item>

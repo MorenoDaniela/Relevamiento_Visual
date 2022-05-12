@@ -47,7 +47,7 @@ cargarFotosLindas(){
       })
     })
   ).subscribe((datos: any) => {
-    
+    this.spinner=false;
   });
 }
 
@@ -70,7 +70,7 @@ cargarFotosFeas(){
       })
     })
   ).subscribe((datos: any) => {
-    this.spinner=false;
+    
   });
 }
 }
