@@ -66,10 +66,20 @@ export class TodasFotosComponent implements OnInit {
   }
 
   UpdateLinda(id:string,votos:number, usuariosQueVotaron:string){
-    var votosNuevo = votos+1;
+    var votosNuevo;
     if(usuariosQueVotaron.includes(this.authService.userData.email)){
-      this.authService.presentToast("Ya ha votado esta foto.",2000,'bottom','danger','text-center');
+      if (votos>0){
+        votosNuevo=votos-1;
+      }else{
+        votosNuevo=0;
+      }
+      
+      var replace = usuariosQueVotaron.replace("/"+this.authService.userData.email,"");
+      console.log(replace);
+      this.photoService.UpdateVotosFoto(id,votosNuevo,replace,'fotosLindas');
+      //this.authService.presentToast("Ya ha votado esta foto.",2000,'bottom','danger','text-center');
     }else{
+      votosNuevo=votos+1;
       var usuariosVotaron = usuariosQueVotaron + '/'+this.authService.userData.email;
       this.photoService.UpdateVotosFoto(id,votosNuevo,usuariosVotaron,'fotosLindas');
     }
@@ -77,13 +87,34 @@ export class TodasFotosComponent implements OnInit {
   }
 
   UpdateFea(id:string,votos:number,usuariosQueVotaron:string){
-    var votosNuevo = votos+1;
+
+
+    var votosNuevo;
     if(usuariosQueVotaron.includes(this.authService.userData.email)){
-      this.authService.presentToast("Ya ha votado esta foto.",2000,'bottom','danger','text-center');
+      if (votos>0){
+        votosNuevo=votos-1;
+      }else{
+        votosNuevo=0;
+      }
+      
+      var replace = usuariosQueVotaron.replace("/"+this.authService.userData.email,"");
+      console.log(replace);
+      this.photoService.UpdateVotosFoto(id,votosNuevo,replace,'fotosFeas');
+      //this.authService.presentToast("Ya ha votado esta foto.",2000,'bottom','danger','text-center');
     }else{
+      votosNuevo=votos+1;
       var usuariosVotaron = usuariosQueVotaron + '/'+this.authService.userData.email;
       this.photoService.UpdateVotosFoto(id,votosNuevo,usuariosVotaron,'fotosFeas');
     }
 
+  }
+
+  Contiene(usuariosQueVotaron:string)
+  {
+    if(usuariosQueVotaron.includes(this.authService.userData.email))
+    {
+      return true;
+    }
+    return false;
   }
 }

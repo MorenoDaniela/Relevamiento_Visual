@@ -19,9 +19,18 @@
       <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-button color="danger" shape="round" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
-      <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
-    </ion-button>
+    <div *ngIf="!Contiene(photo.usuariosQueVotaron)">
+      <ion-button color="danger" shape="round" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <div *ngIf="Contiene(photo.usuariosQueVotaron)">
+      <ion-button color="primary" shape="round" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+    </div>
+    
+    
   </ion-card>
   <div class="text-center" style="background-color:#E5D380;" *ngIf="!spinner">
     <img src="../../../assets/fotosfeas.png">
@@ -37,9 +46,16 @@
       <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-button color="primary" shape="round" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
-      <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
-    </ion-button>
+    <div *ngIf="!Contiene(photo.usuariosQueVotaron)">
+      <ion-button color="danger" shape="round" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
+        <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <div *ngIf="Contiene(photo.usuariosQueVotaron)">
+      <ion-button color="primary" shape="round" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
+        <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
+      </ion-button>
+    </div>
   </ion-card>
 
 
