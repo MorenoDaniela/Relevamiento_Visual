@@ -10,16 +10,19 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./todas-fotos.component.scss'],
 })
 export class TodasFotosComponent implements OnInit {
-  spinner:boolean=false;
+  spinner:boolean=true;
   public misFotosLindas:any=new Array<any>();
   public misFotosFeas:any=new Array<any>();
   constructor(public photoService: PhotoService, public authService: AuthService) {
-    this.spinner=true;
-    this.cargarFotosLindas();
-    this.cargarFotosFeas();
+   
    }
 
-  ngOnInit() {}
+  async ngOnInit() 
+  {
+    await this.cargarFotosLindas();
+    await this.cargarFotosFeas();
+    
+  }
   cargarFotosLindas(){
 
     this.photoService.allFotosLindas.pipe(
@@ -61,7 +64,7 @@ export class TodasFotosComponent implements OnInit {
         })
       })
     ).subscribe((datos: any) => {
-      this.spinner=false;
+      
     });
   }
 

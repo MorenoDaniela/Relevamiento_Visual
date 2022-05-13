@@ -5,7 +5,9 @@
   <div class="spin" *ngIf="spinner">
     <ion-spinner name="crescent"></ion-spinner>
 </div>
-  <div class="text-center" style="background-color:#E5D380;" *ngIf="!spinner">
+
+<div >
+  <div class="text-center" style="background-color:#E5D380;" >
     <img src="../../../assets/fotoslindas.png">
   </div>
  
@@ -13,7 +15,8 @@
     <ion-card-header>
       <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
-    <ion-img [src]="photo.imagen"></ion-img>
+    <!-- <ion-img [src]="photo.imagen"></ion-img> -->
+    <img src="{{photo.imagen}}" (load)="spinner = false" [ngClass]="{'img-loaded':spinner}" />
     <ion-card-header>
       <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.fecha}}</ion-card-subtitle>
       <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
@@ -32,7 +35,7 @@
     
     
   </ion-card>
-  <div class="text-center" style="background-color:#E5D380;" *ngIf="!spinner">
+  <div class="text-center" style="background-color:#E5D380;" >
     <img src="../../../assets/fotosfeas.png">
   </div>
 
@@ -40,7 +43,8 @@
     <ion-card-header>
       <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
-    <ion-img [src]="photo.imagen"></ion-img>
+    <!-- <ion-img [src]="photo.imagen"></ion-img> -->
+    <img src="{{photo.imagen}}" (load)="spinner = false" [ngClass]="{'img-loaded':spinner}" />
     <ion-card-header>
       <ion-card-subtitle style="color:rgb(0, 0, 0)">{{photo.fecha}}</ion-card-subtitle>
       <ion-card-subtitle style="color:rgb(0, 0, 0)"> Votos: {{photo.votos}}</ion-card-subtitle>
@@ -57,6 +61,8 @@
       </ion-button>
     </div>
   </ion-card>
+</div>
+ 
 
 
   <!-- <ion-grid style="background-color:#E5D380;">

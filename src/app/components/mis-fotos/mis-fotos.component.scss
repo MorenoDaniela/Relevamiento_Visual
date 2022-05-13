@@ -13,3 +13,6 @@ ion-content{
     stroke: rgb(20, 170, 35);
     fill: rgb(186, 30, 155);
   }
+  .img-loaded + ion-spinner {
+    display:none;
+  }
