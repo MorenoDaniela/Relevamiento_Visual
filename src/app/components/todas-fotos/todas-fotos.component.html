@@ -29,7 +29,7 @@
     </div>
     <div *ngIf="Contiene(photo.usuariosQueVotaron)">
       <ion-button color="primary" shape="round" expand="block" (click)="UpdateLinda(photo.id, photo.votos, photo.usuariosQueVotaron)">
-        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
       </ion-button>
     </div>
     
@@ -52,7 +52,7 @@
 
     <div *ngIf="!Contiene(photo.usuariosQueVotaron)">
       <ion-button color="danger" shape="round" expand="block" (click)="UpdateFea(photo.id, photo.votos, photo.usuariosQueVotaron)">
-        <ion-icon slot="icon-only" name="heart-dislike-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
       </ion-button>
     </div>
     <div *ngIf="Contiene(photo.usuariosQueVotaron)">

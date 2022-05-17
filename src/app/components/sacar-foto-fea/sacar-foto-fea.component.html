@@ -2,7 +2,14 @@
 
 </app-menu>
 <ion-content>
-
+  <div *ngIf="esperando">
+    <h5 class="text-center">Espere mientras se termina de subir su foto (:</h5>
+    
+</div>
+  <div class="spin" *ngIf="esperando">
+   
+    <ion-spinner name="crescent"></ion-spinner>
+</div>
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="addPhotoToGallery()">
       <ion-icon name="camera"></ion-icon>

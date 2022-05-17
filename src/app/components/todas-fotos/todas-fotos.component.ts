@@ -64,7 +64,7 @@ export class TodasFotosComponent implements OnInit {
         })
       })
     ).subscribe((datos: any) => {
-      
+      this.spinner=false;
     });
   }
 

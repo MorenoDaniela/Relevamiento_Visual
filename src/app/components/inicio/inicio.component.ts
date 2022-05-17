@@ -15,11 +15,11 @@ export class InicioComponent implements OnInit {
   ngOnInit() {}
 
   addPhotoToGallery1() {
-    this.photoService.addNewToGallery('fotosLindas');
+    this.router.navigate(['sacarFotoLinda']);
     
   }
 
   addPhotoToGallery() {
-    this.photoService.addNewToGallery('fotosFeas');
+    this.router.navigate(['sacarFotoFea']);
   }
 }

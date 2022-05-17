@@ -18,3 +18,11 @@ ion-content{
     display:none;
   }
 
+  @font-face{
+    font-family: 'Koulen';
+    src:url('../../../assets/Koulen-Regular.ttf')
+}
+
+h5, ion-item, ion-label, span, ion-button, ion-input, ion-note, div, ion-card-subtitle{
+    font-family: 'Koulen';
+  }

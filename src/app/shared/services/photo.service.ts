@@ -46,7 +46,7 @@ export class PhotoService {
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 50
     });
 
     this.photos.unshift({
@@ -62,12 +62,14 @@ export class PhotoService {
     this.task = this.fireStorage.upload(filePath, file);    // upload task
 
     this.progressValue = this.task.percentageChanges();       // <<<<< Percentage of uploading is given
-    (await this.task).ref.getDownloadURL().then(url => 
-      { this.downloadableURL = url;
-        this.guardarFoto(this.authService.userData.email,this.downloadableURL,0,nameColeccion, new Date().toLocaleString());
-      });  // <<< url is found here
+     return (await this.task).ref.getDownloadURL()
+     //.then(url => 
+    //   { this.downloadableURL = url;
+    //     this.guardarFoto(this.authService.userData.email,this.downloadableURL,0,nameColeccion, new Date().toLocaleString());
+    //     this.router.navigate(['misFotos']);
+    //   });  // <<< url is found here
 
-    this.router.navigate(['misFotos']);
+   
   }
 
 
