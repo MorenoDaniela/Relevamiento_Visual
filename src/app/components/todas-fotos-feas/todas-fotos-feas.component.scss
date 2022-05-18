@@ -13,15 +13,21 @@ ion-content{
     stroke: rgb(20, 170, 35);
     fill: rgb(186, 30, 155);
   }
+
+  .img-loaded + ion-spinner {
+    display:none;
+  }
+
   @font-face{
     font-family: 'Koulen';
     src:url('../../../assets/Koulen-Regular.ttf')
 }
 
-h5, ion-item, ion-label, span, ion-button, ion-input, ion-note, div{
+h5, ion-item, ion-label, span, ion-button, ion-input, ion-note, div, ion-card-subtitle{
     font-family: 'Koulen';
   }
 
+  
   .btn-circle.btn-xl {
     width: 70px;
     height: 70px;

@@ -19,11 +19,11 @@ export class MenuComponent implements OnInit {
   }
 
   cosasLindas(){
-    this.router.navigate(['sacarFotoLinda']);
+    this.router.navigate(['todasFotos']);
   }
 
   cosasFeas(){
-    this.router.navigate(['sacarFotoFea']);
+    this.router.navigate(['todasFotosFeas']);
   }
   listado()
   {
