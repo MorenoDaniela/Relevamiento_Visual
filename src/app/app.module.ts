@@ -29,6 +29,8 @@ import { SacarFotoLindaComponent } from './components/sacar-foto-linda/sacar-fot
 import { MenuComponent } from './components/menu/menu.component';
 import { TodasFotosComponent } from './components/todas-fotos/todas-fotos.component';
 import { TodasFotosFeasComponent } from './components/todas-fotos-feas/todas-fotos-feas.component';
+import { GraficoLindasComponent } from './components/grafico-lindas/grafico-lindas.component';
+import { GraficoFeasComponent } from './components/grafico-feas/grafico-feas.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -43,7 +45,9 @@ import { TodasFotosFeasComponent } from './components/todas-fotos-feas/todas-fot
     SacarFotoLindaComponent,
     MenuComponent,
     TodasFotosComponent,
-    TodasFotosFeasComponent
+    TodasFotosFeasComponent,
+    GraficoLindasComponent,
+    GraficoFeasComponent
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule.initializeApp(environment.firebase),

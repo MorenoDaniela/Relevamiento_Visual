@@ -25,9 +25,12 @@ export class MenuComponent implements OnInit {
   cosasFeas(){
     this.router.navigate(['todasFotosFeas']);
   }
-  listado()
+  graficoLindas()
   {
-    this.router.navigate(['todasFotos']);
+    this.router.navigate(['graficosLindas']);
   }
-
+  graficoFeas()
+  {
+    this.router.navigate(['graficosFeas']);
+  }
 }

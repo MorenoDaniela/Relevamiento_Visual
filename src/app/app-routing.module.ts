@@ -13,6 +13,8 @@ import { SacarFotoFeaComponent } from './components/sacar-foto-fea/sacar-foto-fe
 import { MisFotosComponent } from './components/mis-fotos/mis-fotos.component';
 import { TodasFotosComponent } from './components/todas-fotos/todas-fotos.component';
 import { TodasFotosFeasComponent } from './components/todas-fotos-feas/todas-fotos-feas.component';
+import { GraficoLindasComponent } from './components/grafico-lindas/grafico-lindas.component';
+import { GraficoFeasComponent } from './components/grafico-feas/grafico-feas.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path: 'sacarFotoFea', component:SacarFotoFeaComponent},
   {path: 'misFotos', component:MisFotosComponent},
   {path: 'todasFotos', component:TodasFotosComponent},
-  {path: 'todasFotosFeas', component:TodasFotosFeasComponent}
+  {path: 'todasFotosFeas', component:TodasFotosFeasComponent},
+  {path: 'graficosLindas', component:GraficoLindasComponent},
+  {path: 'graficosFeas', component:GraficoFeasComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

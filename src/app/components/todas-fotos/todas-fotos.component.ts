@@ -13,6 +13,7 @@ export class TodasFotosComponent implements OnInit {
   spinner:boolean=true;
   public misFotosLindas:any=new Array<any>();
   public misFotosFeas:any=new Array<any>();
+  public misFotosParasubir:string[]=[];
   constructor(public photoService: PhotoService, public authService: AuthService) {
    
    }
@@ -83,11 +84,16 @@ export class TodasFotosComponent implements OnInit {
     this.spinner=true;
     this.photoService.addNewToGallery('fotosLindas').then(url => 
       { 
-        this.spinner=false;
-        this.photoService.guardarFoto(this.authService.userData.email,url,0,"fotosLindas", new Date().toLocaleString());
+        this.misFotosParasubir.push(url);
         this.spinner=false;
         // this.router.navigate(['misFotos']);
       });  // <<< url is found here
     
+  }
+  guardarFotos(){
+    this.misFotosParasubir.forEach(fotito =>{
+      this.photoService.guardarFoto(this.authService.userData.email,fotito,0,"fotosLindas", new Date().toLocaleString());
+    });
+    this.misFotosParasubir = [];
   }
 }
